@@ -1,9 +1,8 @@
 package exceptionhandler;
 
 
-import org.junit.Assert;
-import org.junit.Test;
-import org.junit.jupiter.Api.Assert;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 import userdetails.InvalidException;
 import userdetails.UserDetailsException;
 
@@ -16,7 +15,7 @@ public class ExceptionTest {
         try {
             userDetails.validateName("Priyanka");
         } catch (InvalidException e) {
-            Assert.assertEquals(InvalidException.ExceptionType.INVALID_NAME, e.type);
+            Assertions.assertEquals(InvalidException.ExceptionType.INVALID_NAME, e.type);
         }
     }
 
@@ -27,7 +26,7 @@ public class ExceptionTest {
         try {
             userDetails.validateName("priyanka");
         }catch (InvalidException e) {
-            Assert.assertEquals(InvalidException.ExceptionType.INVALID_NAME, e.type);
+            Assertions.assertEquals(InvalidException.ExceptionType.INVALID_NAME, e.type);
         }
     }
 
@@ -38,7 +37,7 @@ public class ExceptionTest {
         try {
             userDetails.validateEmail("abc.xyz@bl.com");
         }catch (InvalidException e) {
-            Assert.assertEquals(InvalidException.ExceptionType.INVALID_EMAIL, e.type);
+            Assertions.assertEquals(InvalidException.ExceptionType.INVALID_EMAIL, e.type);
         }
     }
 
@@ -48,7 +47,7 @@ public class ExceptionTest {
         try {
             userDetails.validateEmail("abc.xyz@bl");
         }catch (InvalidException e){
-            Assert.assertEquals(InvalidException.ExceptionType.INVALID_EMAIL, e.type);
+            Assertions.assertEquals(InvalidException.ExceptionType.INVALID_EMAIL, e.type);
         }
     }
 
@@ -58,7 +57,7 @@ public class ExceptionTest {
         try {
             userDetails.validateMobileNumber("98 9989745621");
         }catch (InvalidException e){
-            Assert.assertEquals(InvalidException.ExceptionType.INVALID_MOBILENUMBER, e.type);
+            Assertions.assertEquals(InvalidException.ExceptionType.INVALID_MOBILENUMBER, e.type);
         }
     }
 
@@ -68,7 +67,7 @@ public class ExceptionTest {
         try {
             userDetails.validateMobileNumber("9923567545");
         }catch (InvalidException e){
-            Assert.assertEquals(InvalidException.ExceptionType.INVALID_MOBILENUMBER, e.type);
+            Assertions.assertEquals(InvalidException.ExceptionType.INVALID_MOBILENUMBER, e.type);
         }
     }
 
@@ -78,7 +77,7 @@ public class ExceptionTest {
         try {
             userDetails.validatePassWord("priyanka113");
         }catch (InvalidException e){
-            Assert.assertEquals(InvalidException.ExceptionType.INVALID_PASSWORD, e.type);
+            Assertions.assertEquals(InvalidException.ExceptionType.INVALID_PASSWORD, e.type);
         }
     }
 
@@ -88,7 +87,7 @@ public class ExceptionTest {
         try{
             userDetails.validatePassWord("Priyanka@113");
         }catch (InvalidException e){
-            Assert.assertEquals(InvalidException.ExceptionType.INVALID_PASSWORD, e.type);
+            Assertions.assertEquals(InvalidException.ExceptionType.INVALID_PASSWORD, e.type);
         }
     }
 }
