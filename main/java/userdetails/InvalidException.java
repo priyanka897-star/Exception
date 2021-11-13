@@ -1,6 +1,5 @@
 package userdetails;
 
-
 public class InvalidException extends Exception {
         public InvalidException(ExceptionType enteredNull) {
         }
